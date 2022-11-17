@@ -26,6 +26,7 @@ int main () {
 					&people[total].score, &people[total].weight);
 			total ++;
 		} else if (cmd == 'p') {
+			printAllPeople(people, total);
 		} else if (cmd == 'g') {
 		} else if (cmd == 's') {
 			break;
@@ -36,4 +37,15 @@ int main () {
 	}
 
 
+}
+
+void printAllPeople (const Person* people, int len) {
+	printf("[name]\t[score]\t[weight]\n");
+	while (len > 0) {
+		printf("%s\t%d\t%d\n",
+				people[len-1].name,
+				people[len-1].score,
+				people[len-1].weight);
+		len--;
+	}
 }
