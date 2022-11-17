@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 
 typedef struct {
@@ -8,16 +9,19 @@ typedef struct {
 } Person;
 
 void printAllPeople (const Person* people, int len);
-void getInfoByName (const char * name);
+
+/*
+ * get information from people database by name
+ */
+void printInfoByName (const Person* people, int len, const char * name);
+
 int main () {
 	Person people [100];
 	int total = 0;
 
-
-
 	while (1) {
 		char cmd;
-		printf("Insert, Print, Get or Stop [i/p/g/s]\n");
+		printf("Insert, Print, Get or Stop [i/p/g/s] > ");
 		scanf(" %c", &cmd);
 
 		if (cmd == 'i') {
@@ -28,6 +32,10 @@ int main () {
 		} else if (cmd == 'p') {
 			printAllPeople(people, total);
 		} else if (cmd == 'g') {
+			char namae [20];
+			printf("[name]\n");
+			scanf("%s",namae);
+			printInfoByName(people, total, namae);
 		} else if (cmd == 's') {
 			break;
 		} else {
@@ -47,5 +55,14 @@ void printAllPeople (const Person* people, int len) {
 				people[len-1].score,
 				people[len-1].weight);
 		len--;
+	}
+}
+
+void printInfoByName (const Person* people, int len, const char * name) {
+	printf("[name]\t[score]\t[weight]\n");
+	for(;len>0;len--){
+		if(!strcmp(name,people[len].name)) {
+			printf("%s\t%d\t%d\n",people[len].name,people[len].score,people[len].weight);
+		}
 	}
 }
