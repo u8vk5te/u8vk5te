@@ -1,3 +1,4 @@
 kk 20 30
 sf 10 30
 kyoungho 100 90
+kk 30 20

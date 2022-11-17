@@ -55,10 +55,18 @@ int main () {
 		} else if (cmd == 'p') {
 			printAllPeople(people, total);
 		} else if (cmd == 'g') {
-			char namae [20];
-			printf("[name]\n");
-			scanf("%s",namae);
-			printInfoByName(people, total, namae);
+			printf("name, score or weight [n/s/w] > ");
+			scanf(" %c", &cmd);
+			if (cmd == 'n') {
+				char namae [20];
+				printf("[name]\n");
+				scanf("%s",namae);
+				printInfoByName(people, total, namae);
+			} else if (cmd == 's') {
+				printf("[score]\n");
+			} else if (cmd == 'w') {
+				printf("[weight]\n");
+			}
 		} else if (cmd == 's') {
 			break;
 		} else {
