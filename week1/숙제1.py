@@ -1,0 +1,17 @@
+print("이름을 입력하세요")
+a=input()
+print("나이를 입력하세요")
+b=input()
+print ("몸무게를 입력하세요")
+c=input()
+print("키를 입력하세요")
+d=input()
+print("IQ를 입력하세요")
+e=input()
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+
+
